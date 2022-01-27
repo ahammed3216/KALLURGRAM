@@ -1,4 +1,4 @@
-from django.contrib.auth import authenticate
+from django.contrib.auth import authenticate,logout
 from .models import Profile
 from django.shortcuts import redirect, render
 from .forms import ProfileForm,LoginForm, RegisterForm, User
@@ -87,6 +87,8 @@ def LoginView(request):
 
 
 
-def logout(request):
+def logoutview(request):
+    
     logout(request)
-    redirect('/')
+    print("h")
+    return redirect('/')

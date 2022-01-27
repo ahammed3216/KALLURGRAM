@@ -1,8 +1,65 @@
-<h1>LOGIN FORM</h1>
-<form method="POST">
-    {%csrf_token %}
+<!DOCTYPE>
+<html>
+<title>.HACK()</title>
+<head>
+   
+</head>
+  <style>
+    body
+    {
+      background-image: linear-gradient(to right, #e5a9ff, #d678ff, #cd57ff); 
+      text-align: center;
+    }
+   h1
+    {
+      font-size: 100;    
+    }
+   p
+   {
+     text-align: center;  
+     font-size: 40;  
 
-    {{ form.as_p}}
+   }
 
-    <button type="submit">submit</button>
-</form>
+   button
+    {
+      border-color: green;
+      color: white;
+      background-color: #03AC13;
+      width: 400px;
+      height: 50px;
+      font-family: neonderthaw;
+      font-size: 20;     
+    }
+   form
+    {
+     text-align: left;    
+     color: black;  
+     align-content: center;
+     font-family: neonderthaw; 
+     font-size:20;   
+    }
+
+  </style>
+<body>
+  <h1>WELCOME</h1>
+  <p>"Be a Part of our Family"</p> 
+  
+  <div align="center">
+  
+  <form align="centre" method="POST">
+      {% csrf_token %}
+     <label>Username</label><br>
+     <input align="center" type="text" alt="username"name="username" id="username"><br>
+     <label>Password</label><br>
+     <input name ="password" id="password" type="password" alt="password"<br><br>
+     <button>Sign in</button><br>
+     <button>Create a new Account</button><br>
+  </form>
+  </div>
+
+
+
+</body>
+
+</html>

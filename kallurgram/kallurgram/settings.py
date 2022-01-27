@@ -77,8 +77,11 @@ WSGI_APPLICATION = 'kallurgram.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
+        'ENGINE': 'django.db.backends.postgresql',
+        'NAME': 'kallurgram',
+        'USER':'ahammedunny',
+        'PASSWORD':'Ahammed@3216',
+        'HOST':'localhost'
     }
 }
 

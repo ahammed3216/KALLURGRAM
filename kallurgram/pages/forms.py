@@ -53,3 +53,28 @@ class RegisterForm(forms.Form):
         if email_qs.exists():
             raise forms.ValidationError('Email already exists !!!')
         return email
+
+
+class JobForm(forms.Form):
+    jobname=forms.CharField()
+    employee_name=forms.CharField()
+    description=forms.CharField(widget=forms.Textarea)
+    phonenumber=forms.CharField()
+    email=forms.EmailField()
+    location=forms.CharField()
+    image=forms.ImageField()
+
+class BussinessForm(forms.Form):
+    owner_name=forms.CharField()
+    bussiness_name=forms.CharField()
+    description=forms.CharField(widget=forms.Textarea)
+    sector=forms.CharField()
+    image=forms.ImageField()
+    location=forms.CharField()
+    phonenumber=forms.CharField()
+
+class NotificationForm(forms.Form):
+    subject=forms.CharField()
+    text=forms.CharField(widget=forms.Textarea)
+    image=forms.ImageField()
+    

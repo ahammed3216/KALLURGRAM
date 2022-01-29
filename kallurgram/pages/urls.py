@@ -1,6 +1,6 @@
 
 from django.urls import path
-from .views import BussinessFormView, BussinessView, JobFormView, JobView, LoginView, NotificationFormView, NotificationView, Register, home, logoutview, profileView,profileFormView
+from .views import BussinessFormView, BussinessView, JobFormView, JobView, LoginView, NotificationFormView, NotificationView, Register, home, logoutview, profileView,profileFormView, profile_single
 
 urlpatterns=[
     path('profileform/',profileFormView,name='profile-form'),
@@ -14,6 +14,7 @@ urlpatterns=[
     path('notification_form/',NotificationFormView,name="notifiactionpage_form"),
     path('notification_view/',NotificationView,name="notifiaction-view"),
     path('bussiness_view/',BussinessView,name="bussiness_view"),
-    path('jobs_view/',JobView,name="jobView-page")
+    path('jobs_view/',JobView,name="jobView-page"),
+    path('profile_single/',profile_single,name="profile-single")
 
 ]

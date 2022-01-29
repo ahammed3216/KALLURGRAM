@@ -50,7 +50,7 @@ def profileFormView(request):
         return redirect('/login')
 
 def home(request):
-    return render(request,"home_page.html")
+    return render(request,"home1.html")
 
 
 def Register(request):
@@ -86,7 +86,7 @@ def LoginView(request):
         print(user.is_authenticated)   
         print(email)
 
-        return redirect('/')
+        return redirect('/profileform')
 
     return render (request,"login.html",context={'form':form})
 
@@ -221,3 +221,16 @@ def NotificationView(request):
         'items':not_qs
     }
     return render(request,"notification_view.html",context)
+
+
+
+def profile_single(request):
+    profile=Profile.objects.get(user=request.user)
+    jobs=Jobs.objects.filter(user=request.user)
+    items=Bussiness.objects.filter(user=request.user)
+    context={
+        'jobs':jobs,
+        'profile':profile,
+        'items':items
+    }
+    return render(request,"profile_new.html",context)

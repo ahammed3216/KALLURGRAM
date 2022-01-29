@@ -20,47 +20,56 @@ $(document).ready(function () {
 <style type="text/css">
 .fancy a img{border:1px solid #BBB; padding:2px; margin:10px 20px 10px 0; vertical-align:top;}
 .fancy a img.last{margin-right:0;}
+.topnav {
+  background-color: #333;
+  overflow: hidden;
+}
+
+/* Style the links inside the navigation bar */
+.topnav a {
+  float: left;
+  color: #f2f2f2;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+  font-size: 17px;
+}
+
+/* Change the color of links on hover */
+.topnav a:hover {
+  background-color: #ddd;
+  color: black;
+}
+
+/* Add a color to the active/current link */
+.topnav a.active {
+  background-color: #04AA6D;
+  color:
+white;
+}
 </style>
 <!--FANCY BOX-->
 </head>
 <body>
-<div class="header">
-  <div id="logo"> <a href="#"> <img alt="" src="{% static 'trinity/images/logo.png' %}"> </a> </div>
-  <div class="nav"> 
-    <!--start navigation-->
-    <ul>
-      <li class="title"><a href="#">Home</a></li>
-      <li><a href="#">welcome</a></li>
-      <li><a href="#">guarantee</a></li>
-      <li><a href="#">join us</a></li>
-    </ul>
-    <ul>
-      <li class="title"><a href="#">About</a></li>
-      <li><a href="#">our company</a></li>
-      <li><a href="#">pricing</a></li>
-      <li><a href="#">testimonials</a></li>
-    </ul>
-    <ul>
-      <li class="title"><a href="#">Portfolio</a></li>
-      <li><a href="#">our clients</a></li>
-      <li><a href="#">user experience</a></li>
-      <li><a href="#">current projects</a></li>
-    </ul>
-    <ul class="menu-side">
-      <li><a href="#">Facebook</a></li>
-      <li><a href="#">Twitter</a></li>
-      <li><a href="#">Dribbble</a></li>
-    </ul>
-  </div>
-</div>
+  <div class="topnav">
+    <a class="active" href="/">Home</a>
+    <a href="/notification_view">News</a>
+    <a href="/jobs_view">Jobs</a>
+    <a href="/bussiness_view">Bussiness</a>
+    {% if user.is_authenticated %}
+    <a href="/profile_single">Profile</a>
+      <a href="/logout">logout</a>
+    {% else %}
+      <a href="/login">login</a>
+    {% endif %}
+    </div> 
+
 <div id="body-wrapper" class="clearfix">
   <!--start body-wrapper-->
-  <div style="padding-top:100px;" class="slider-wrapper theme-default">
-    <div id="slider" class="nivoSlider"> <img src="{% static 'trinity/images/slide1.png' %}" alt=""> <img src="{% static 'trinity/images/slide2.png' %}" alt=""> </div>
-  </div>
+
   <div class="box">
-    <h1>Im once, twice, threeee times a template.</h1>
-    <p>Donec tristique hendrerit dui vitae lacinia. Suspendisse ante ligula, adipiscing porta aliquam et, rutrum nec lectus. Nulla erat risus, molestie non dapibus ac, fermentum vitae felis. Suspendisse ante ligula, adipiscing porta aliquam et, rutrum nec lectus. Nulla erat risus, molestie non dapibus.</p>
+    <h1>Directory</h1>
+    <p>THE CONTACT DETAILS IN OUR VILLAGE IS GIVEN BELOW.</p>
   </div>
   {% for profile in profiles %}
   <div class="one_fourth">

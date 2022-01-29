@@ -64,10 +64,17 @@ white;
           <input type="submit" value="Create">
         </div>
         <div class="topnav">
-            <a class="active" href="#home">Home</a>
-            <a href="#news">News</a>
-            <a href="#contact">Contact</a>
-            <a href="#about">About</a>
+          <a class="active" href="/">Home</a>
+          <a href="/profileview">Directory</a>
+          <a href="/jobs_view">Jobs</a>
+          <a href="/bussiness_view">Bussiness</a>
+          <a href="/profileview">Directory</a>
+          {% if user.is_authenticated %}
+          <a href="/profile_single">Profile</a>
+            <a href="/logout">logout</a>
+          {% else %}
+            <a href="/login">login</a>
+          {% endif %}
           </div> 
       </form>
     </div>
